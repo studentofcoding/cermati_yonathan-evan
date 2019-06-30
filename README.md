@@ -1,4 +1,10 @@
-To Start the project use below script via terminal:
+This site is build by React.js (Javascript library) and Netlify (for hosting)
+
+>> This is the live site result:
+
+https://yonathan-evan-cermati-exercise.netlify.com
+
+>> To Start the project, Clone it to your pc and use below script via terminal :
 
 #1# `npm install`
 
