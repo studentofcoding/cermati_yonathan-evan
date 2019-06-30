@@ -1,10 +1,10 @@
 This site is build by React.js (Javascript library) and Netlify (for hosting)
 
->> This is the live site result:
+++ This is the live site result:
 
 https://yonathan-evan-cermati-exercise.netlify.com
 
->> To Start the project, Clone it to your pc and use below script via terminal :
+++ To Start the project, Clone it to your pc and use below script via terminal :
 
 #1# `npm install`
 
