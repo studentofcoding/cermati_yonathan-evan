@@ -1,10 +1,31 @@
+/**
+ * This is the class name and for the corelated section of the page :
+ * *  notif-panel               = Notification Panel content
+ * *  herosho-section           = Hero-shot Section content
+ * *  highlights-panel_grid     = Highlight Panel Grid
+ * *                            ==> hp-header_column      = Header section of Highlight Panel
+ * *                            ==> hp-body_column        = Body section of Highlight Panel
+ * *                            ==> hp-body_container     = Container for body Highlight content
+ * *                            ==> hp-content            = 6 content's of Highlight content
+ * *  newsletter-container (id) = Sliding Panel
+ * *  newsletterhide       (id) = Sliding Panel (when hidden)
+ * *  footer                    = Footer content
+ */
+
 body {
+  margin: 0;
   font-family: 'PT Sans', sans-serif;
   font-size: 24px;
   font-weight: 100 !important;
   line-height: 28px;
   max-width: 1366px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* 
+  Global setting
+*/
 
 .web-container {
   text-align: center;
@@ -17,12 +38,7 @@ body {
   margin:0;
 }
 
-.call-to-action button {
-  text-transform: uppercase;
-  padding: 20px;
-}
-
-.top-notif {
+.notif-panel {
   position: sticky;
   position: -webkit-sticky;
   z-index: 100;
@@ -34,6 +50,11 @@ body {
   color: rgb(60, 60, 60);
   font-size: 0.6em;
   padding: 15px;
+  transition:all .20s ease-out;
+  -webkit-transition:all .20s ease-out;
+  -moz-transition:all .20s ease-out;
+  -ms-transition:all .20s ease-out;
+  -o-transition:all .20s ease-out;
 }
 
 .notif-container {
@@ -67,7 +88,7 @@ body {
   -o-border-radius: 5px;
 }
 
-.top-content {
+.heroshot-section {
   background-image: 
     linear-gradient(
       #004a75c0,
@@ -132,34 +153,34 @@ body {
   background-color: white;
 }
 
-.bottom-content_grid {
+.highlights-panel_grid {
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.75fr 1.25fr;
-  grid-template-areas: "bottom-header_column" "bottom-body_column";
-  grid-area: bottom-content_grid;
+  grid-template-areas: "hp-header_column" "hp-body_column";
+  grid-area: highlights-panel_grid;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.bottom-header_column { 
-  grid-area: bottom-header_column;
+.hp-header_column { 
+  grid-area: hp-header_column;
   margin-left: 23%;
   margin-right: 23%;
   width: 54%; 
 }
 
-.p-bottom-header {
+.p-hp-header {
   font-size: 0.85em;
   line-height: 1.4em;
 }
 
-.bottom-body_column { 
-  grid-area: bottom-body_column; 
+.hp-body_column { 
+  grid-area: hp-body_column; 
 }
 
-.bottom-body_container {
+.hp-body_container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -171,7 +192,7 @@ body {
   padding: 5px;
 }
 
-.bb_content {
+.hp_content {
   width: 360px;
   height: 100%;
   text-align: left;
@@ -199,12 +220,7 @@ body {
     Newsletter section
 */
 
-.newsletterhide {
-  display: none;
-  bottom:-120px;
-}
-
-.newsletter-container  {
+#newsletter-container  {
   display: fixed;
   flex: wrap;
   flex-direction: column;
@@ -217,11 +233,31 @@ body {
   position: fixed;
   padding: 20px;
   text-align: left;
-  transition:all .25s ease-in-out;
-  -webkit-transition:all .25s ease-in-out;
-  -moz-transition:all .25s ease-in-out;
-  -ms-transition:all .25s ease-in-out;
-  -o-transition:all .25s ease-in-out;
+  transition:all .5s ease-in-out;
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -ms-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+}
+
+#newsletterhide {
+  display: none;
+  flex: wrap;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: 520px;
+  color: white;
+  background-color: #007ac1d3;
+  position: fixed;
+  padding: 20px;
+  text-align: left;
+  transition:all .5s ease-in-out;
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -ms-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
 }
 
 .newsletter-details {
@@ -334,20 +370,20 @@ body {
     font-weight: bold;
   }
 
-  .bottom-header_column { 
-    grid-area: bottom-header_column;
+  .hp-header_column { 
+    grid-area: hp-header_column;
     margin-left: 6%;
     margin-right: 6%;
     width: 88%; 
   }
 
-  .p-bottom-header {
+  .p-hp-header {
     margin-left: 8%;
     margin-right: 8%;
     width: 84%; 
   }
 
-  .newsletter-container  {
+  #newsletter-container  {
     width: 100%;
     max-width: 640px;
     position: fixed;
@@ -435,7 +471,7 @@ body {
     width: 75%;
   }
 
-  .newsletter-container  {
+  #newsletter-container  {
     position: fixed;
     height: 170px;
     width: 100%;
